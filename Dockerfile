@@ -6,7 +6,8 @@ ENV SUBMIN_VERSION 2.2.2-1
 VOLUME /var/lib/svn
 VOLUME /var/lib/submin
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN apt-get update \
+RUN chmod +x /docker-entrypoint.sh \
+    apt-get update \
     && apt-get install -y --no-install-recommends \
        python \
        subversion \
