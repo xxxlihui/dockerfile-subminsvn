@@ -1,0 +1,11 @@
+docker run -it --rm \
+       -e "SUBMIN_HOSTNAME=svn.seater.cn" \
+       -e "SUBMIN_EXTERNAL_PORT=50001" \
+       -e "SUBMIN_DATA_DIR=/var/sytech/submin" \
+       -e "SUBMIN_SVN_DIR=/var/sytech/svn" \
+       -e "SUBMIN_ADMIN_MAIL=550124023@qq.com" \
+       -v "/var/sytech/svn/submin:/var/sytech/submin" \
+       -v "/var/sytech/svn/data:/var/sytech/svn" \
+       -v "/etc/localtime:/etc/localtime" \
+       -p "50001:80" \
+        registry.cn-hangzhou.aliyuncs.com/lhn/subminsvn:6

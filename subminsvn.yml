@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+      image: 'thaim/submin'
+      environment:
+        SUBMIN_HOSTNAME: svn.seater.cn
+        SUBMIN_EXTERNAL_PORT: 443
+        SUBMIN_DATA_DIR: '/var/sytech/submin'
+        SUBMIN_SVN_DIR: '/var/sytech/svn'
+        SUBMIN_ADMIN_MAIL: '550124023@qq.com'
+      volumes:
+        - '/var/sytech/svn/submin:/var/sytech/submin'
+        - '/var/sytech/svn/data:/var/sytech/svn'
+        - '/etc/localtime:/etc/localtime'
+      ports:
+        - '80:80'
+        - '443:443'
+      networks:
+        - sytech
+networks:
+  sytech:
+    external: true
