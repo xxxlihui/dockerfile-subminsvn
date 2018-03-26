@@ -27,8 +27,6 @@ RUN chmod +x /docker-entrypoint.sh \
     && cd / \
     && rm -rf /opt/submin-${SUBMIN_VERSION}
 
-COPY ./docker-entrypoint.sh /
-
 RUN usermod -u 1000 www-data
 
 EXPOSE 80
