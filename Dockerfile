@@ -7,7 +7,7 @@ VOLUME /var/lib/svn
 VOLUME /var/lib/submin
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh \
-    apt-get update \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
        python \
        subversion \
