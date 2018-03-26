@@ -30,5 +30,5 @@ RUN chmod +x /docker-entrypoint.sh \
 RUN usermod -u 1000 www-data
 
 EXPOSE 80
-CMD "/docker-entrypoint.sh"
+CMD ["/docker-entrypoint.sh"]
 #CMD ["submin"]
